@@ -23,18 +23,6 @@ files:
         }
     }
   learner_created: false
-- name: src/asciimirror/text.txt
-  visible: true
-  text: |2-
-                        _______
-                       < hello >
-                        -------
-                ^__^   /
-        _______/(oo)  /
-    /\/(       /(__)
-       | w----||
-       ||     ||
-  learner_created: false
 - name: test/MirrorTest.java
   visible: false
   text: |-
@@ -224,5 +212,8 @@ files:
     Hello
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/20318#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sun, 03 Jul 2022 10:02:14 UTC
 record: -1
