@@ -15,6 +15,15 @@
       <entry name="!*.mpsr" />
       <entry name="!*.model" />
     </wildcardResourcePatterns>
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="ASCII_Mirror.ASCII_Mirror-task-build-classes-java.main" target="17" />
+      <module name="ASCII_Mirror.ASCII_Mirror-task-build-generated-sources-annotationProcessor-java.main" target="17" />
+      <module name="ASCII_Mirror.ASCII_Mirror-task-build-generated-sources-headers-java.main" target="17" />
+      <module name="ASCII_Mirror.ASCII_Mirror-task-build-reports-tests.main" target="17" />
+      <module name="ASCII_Mirror.ASCII_Mirror-task-build-test-results.main" target="17" />
+      <module name="ASCII_Mirror.ASCII_Mirror-task-build-tmp.main" target="17" />
+      <module name="ASCII_Mirror.ASCII_Mirror-task.main" target="17" />
+      <module name="ASCII_Mirror.util.main" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

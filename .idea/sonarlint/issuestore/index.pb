@@ -1,5 +1,5 @@
 
-V
-&ASCII Mirror/task/test/MirrorTest.java,f\2\f2029125202fe8a14b58e218923b13d1c77a2c73
-Z
-*ASCII Mirror/task/src/asciimirror/text.txt,4\2\42ccc3c2874b0395a050c2612a1506b7db5ef973
+W
+'ASCII Mirror/New friends/task-info.yaml,b\e\be28c8da89432c7cffa84ac5ce85c694314265f5
+S
+#ASCII Mirror/task/test/example2.txt,5\a\5adbccf7e76a1aa79dcfde9efa459bf2186ff8f7

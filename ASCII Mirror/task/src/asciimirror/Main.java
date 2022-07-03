@@ -22,9 +22,54 @@ public class Main {
         var optLine = lines.stream().max(Comparator.comparingInt(String::length));
         if (optLine.isPresent()) {
             int maxLength = optLine.get().length();
-            var modifiedLines = new ArrayList<String>();
-            lines.replaceAll(line -> line + " ".repeat(maxLength - line.length()));
-            lines.forEach(line -> System.out.println(line + " | " + line));
+
+            for (var line : lines) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(line);
+                sb.append(" ".repeat(maxLength - line.length()));
+                StringBuilder res = new StringBuilder();
+                res.append(sb);
+                res.append(" | ");
+                sb.reverse();
+                for (int i = 0; i < sb.length(); i++) {
+                    switch (sb.charAt(i)) {
+                        case '\\':
+                            res.append("/");
+                            break;
+                        case '/':
+                            res.append("\\");
+                            break;
+                        case '}':
+                            res.append("{");
+                            break;
+                        case '{':
+                            res.append("}");
+                            break;
+                        case ']':
+                            res.append("[");
+                            break;
+                        case '[':
+                            res.append("]");
+                            break;
+                        case ')':
+                            res.append("(");
+                            break;
+                        case '(':
+                            res.append(")");
+                            break;
+                        case '<':
+                            res.append(">");
+                            break;
+                        case '>':
+                            res.append("<");
+                            break;
+                        default:
+                            res.append(sb.charAt(i));
+                            break;
+                    }
+                }
+                System.out.println(res);
+            }
         }
     }
 }

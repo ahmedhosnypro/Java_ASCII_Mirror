@@ -3,8 +3,7 @@ import org.hyperskill.hstest.exception.outcomes.WrongAnswer;
 import org.hyperskill.hstest.stage.StageTest;
 import org.hyperskill.hstest.testcase.CheckResult;
 import org.hyperskill.hstest.testing.TestedProgram;
-import org.junit.Assert;
-import org.junit.Test;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -79,15 +78,31 @@ public class MirrorTest extends StageTest {
         StringBuilder sb=new StringBuilder();
         sb.append(s);
         sb.append(" ".repeat(max-s.length()));
-        sb.append(" | ");
-        sb.append(s);
-        sb.append(" ".repeat(max-s.length()));
-        result_str.add(sb.toString());
+        StringBuilder res = new StringBuilder();
+        res.append(sb);
+        res.append(" | ");
+        sb.reverse();
+        for (int i=0;i<sb.length();i++) {
+          switch(sb.charAt(i)){
+            case '\\': res.append("/");break;
+            case '/': res.append("\\");break;
+            case '}': res.append("{");break;
+            case '{': res.append("}");break;
+            case ']': res.append("[");break;
+            case '[': res.append("]");break;
+            case ')': res.append("(");break;
+            case '(': res.append(")");break;
+            case '<': res.append(">");break;
+            case '>': res.append("<");break;
+            default: res.append(sb.charAt(i));break;
+          }
+        }
+        result_str.add(res.toString());
       }
       for (int i=0;i<list.size();i++) {
         if (list.get(i).length()!=result_str.get(i).length() || !list.get(i).equals(result_str.get(i))) {
           throw new WrongAnswer("When the user inputs a file, that can be correctly opened - " +
-                  "each line in output should match the following pattern: \"{modified line} | {modified line}\"");
+                  "each line in output should match the following pattern: \"{modified line} | {reversed modified line}\"");
         }
       }
     }
